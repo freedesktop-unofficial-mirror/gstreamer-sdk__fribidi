@@ -123,8 +123,8 @@ utime (
   void
 )
 {
-  struct tms tb;
 #if HAVE_SYS_TIMES_H+0
+  struct tms tb;
   times (&tb);
   return 0.01 * tb.tms_utime;
 #else
