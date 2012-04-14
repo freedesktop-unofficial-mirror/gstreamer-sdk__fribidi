@@ -8,10 +8,6 @@ libfribidi_la_LDFLAGS = -no-undefined -version-info $(LT_VERSION_INFO) -export-s
 libfribidi_la_LIBADD = $(MISC_LIBS)
 libfribidi_la_DEPENDENCIES =
 
-if OS_WIN32
-libfribidi_la_LDFLAGS += -export-symbols $(srcdir)/fribidi.def
-endif # OS_WIN32
-
 if FRIBIDI_CHARSETS
 
 AM_CPPFLAGS += -I$(top_srcdir)/charset
