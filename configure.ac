@@ -110,7 +110,11 @@ AC_CHECK_SIZEOF(wchar_t)
 # Checks for compiler characteristics.
 changequote(,)dnl
 if test "x$GCC" = "xyes"; then
-  CFLAGS="$CFLAGS -Wall -ansi "
+  CFLAGS="$CFLAGS -Wall "
+  case $host in
+    *android*) ;;
+    *) CFLAGS="$CFLAGS -ansi " ;;
+  esac
 fi
 changequote([,])dnl
 
