@@ -13421,7 +13421,11 @@ _ACEOF
 
 # Checks for compiler characteristics.
 if test "x$GCC" = "xyes"; then
-  CFLAGS="$CFLAGS -Wall -ansi "
+  CFLAGS="$CFLAGS -Wall "
+  case $host in
+    *android*) ;;
+    *) CFLAGS="$CFLAGS -ansi " ;;
+  esac
 fi
 
 # Checks for library functions.
